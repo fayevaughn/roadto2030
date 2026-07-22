@@ -41,7 +41,6 @@
   html { background: var(--paper); scroll-behavior: smooth; }
   section[id] { scroll-margin-top: 24px; }
 
-  /* ============ ANNOUNCEMENT BAR (site chrome) ============ */
   .announce {
     background: var(--gold);
     color: var(--navy);
@@ -58,7 +57,6 @@
     text-underline-offset: 3px;
   }
 
-  /* ============ MAIN NAV (site chrome) ============ */
   .main-nav {
     background: var(--navy);
     padding: 22px 64px;
@@ -102,7 +100,6 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .announce a { text-decoration: underline; text-underline-offset: 3px; }
   .main-nav-social {
     display: flex;
     gap: 14px;
@@ -121,7 +118,6 @@
   }
   .social-icon svg { width: 100%; height: 100%; }
 
-  /* ============ SUB-NAV (page anchors, sticky style) ============ */
   .sub-nav {
     background: var(--navy-deep);
     border-top: 1px solid rgba(255,255,255,0.08);
@@ -174,11 +170,10 @@
     display: inline-block;
   }
 
-  /* ============ HERO ============ */
   .hero {
     background: var(--navy);
     color: var(--white);
-    padding: 96px 64px 88px;
+    padding: 88px 64px 88px;
     position: relative;
     overflow: hidden;
   }
@@ -201,29 +196,24 @@
     height: 1px;
     background: rgba(255,255,255,0.12);
   }
+  .hero-logo {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-logo img {
+    height: 140px;
+    width: auto;
+    display: inline-block;
+    max-width: 100%;
+  }
   .hero-grid {
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     gap: 80px;
     position: relative;
     z-index: 2;
-  }
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 40px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 36px;
-    height: 1px;
-    background: var(--gold);
   }
   h1 {
     font-family: 'Playfair Display', serif;
@@ -343,7 +333,6 @@
     font-weight: 500;
   }
 
-  /* ============ RUNWAY ============ */
   .runway {
     background: var(--paper);
     padding: 72px 64px 80px;
@@ -432,7 +421,6 @@
     max-width: 200px;
   }
 
-  /* ============ WHO IT'S FOR ============ */
   .who {
     background: var(--white);
     padding: 96px 64px;
@@ -508,7 +496,6 @@
     font-weight: 500;
   }
 
-  /* ============ OFFERS ============ */
   .offer {
     padding: 96px 64px;
     background: var(--paper);
@@ -600,7 +587,6 @@
     transform: translateY(-2px);
   }
 
-  /* ============ CAPABILITIES ============ */
   .caps {
     padding: 96px 64px;
     background: var(--white);
@@ -649,7 +635,6 @@
     color: var(--navy);
   }
 
-  /* ============ PARTNERS ============ */
   .partner {
     padding: 88px 64px;
     background: var(--navy);
@@ -704,7 +689,6 @@
   }
   .partner-body p + p { margin-top: 18px; }
 
-  /* ============ CTA ============ */
   .cta {
     padding: 112px 64px 96px;
     background: var(--paper);
@@ -768,7 +752,6 @@
     font-weight: 700;
   }
 
-  /* ============ FOOTER (site chrome) ============ */
   .site-footer {
     background: var(--navy);
     color: var(--white);
@@ -852,14 +835,14 @@
   }
   .site-footer-copy a { color: var(--gold); text-decoration: none; }
 
-  /* ============ RESPONSIVE BREAKPOINTS FOR WIX EMBED ============ */
-  /* Tablet: stack 3-col grids to 2-col or stack, tighten padding */
   @media (max-width: 1024px) {
     .main-nav, .sub-nav, .hero, .runway, .who, .offer, .caps, .partner, .cta, .site-footer {
       padding-left: 40px;
       padding-right: 40px;
     }
-    .hero { padding-top: 72px; padding-bottom: 64px; }
+    .hero { padding-top: 64px; padding-bottom: 64px; }
+    .hero-logo { margin-bottom: 44px; }
+    .hero-logo img { height: 110px; }
     .hero-grid { grid-template-columns: 1fr; gap: 56px; }
     h1 { font-size: 64px; }
     .runway-header { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
@@ -876,7 +859,6 @@
     .sub-nav-links { gap: 24px; }
   }
 
-  /* Mobile: single column, drop desktop-only elements */
   @media (max-width: 720px) {
     .main-nav, .sub-nav, .hero, .runway, .who, .offer, .caps, .partner, .cta, .site-footer {
       padding-left: 24px;
@@ -893,7 +875,8 @@
     .sub-nav-links a.active::after { display: none; }
     .sub-nav-title { font-size: 13px; }
     .hero { padding: 48px 24px 48px; }
-    .hero-eyebrow { font-size: 10px; margin-bottom: 24px; }
+    .hero-logo { margin-bottom: 32px; }
+    .hero-logo img { height: 80px; }
     h1 { font-size: 44px; margin-bottom: 24px; }
     .hero-lede { font-size: 16px; margin-bottom: 28px; }
     .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -940,12 +923,10 @@
 </head>
 <body>
 
-<!-- SITE CHROME: ANNOUNCEMENT BAR -->
 <div class="announce">
   Now Booking Q2 Strategy Engagements &middot; <a href="https://calendly.com/fayevaughn/consultation" target="_blank" rel="noopener">Book a Discovery Call</a>
 </div>
 
-<!-- SITE CHROME: MAIN NAV -->
 <nav class="main-nav">
   <a href="https://www.fayevaughn.com" class="logo">
     <img class="logo-img" src="https://static.wixstatic.com/media/f5b2df_4cc3acbce49f49da8513e5011dbade4a~mv2.png/v1/fill/w_632,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Primary%20Logo%20-%20White.png" alt="FayeVaughn Creative">
@@ -968,7 +949,6 @@
   </div>
 </nav>
 
-<!-- SUB-NAV: PAGE ANCHORS -->
 <div class="sub-nav">
   <div class="sub-nav-title">The Runway to 2030</div>
   <div class="sub-nav-links">
@@ -981,11 +961,12 @@
   <a href="https://calendly.com/fayevaughn/consultation" target="_blank" rel="noopener" class="sub-nav-cta">Book a Call</a>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="window">
+  <div class="hero-logo">
+    <img src="https://static.wixstatic.com/media/f5b2df_89e7d7406f9a4520b4efca7c811ee209~mv2.png" alt="Road to 2030">
+  </div>
   <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow">A FayeVaughn Creative Division / Est. 2026</div>
       <h1>The next era of Nashville visibility is <em>already underway.</em></h1>
       <p class="hero-lede">A strategy and activation practice built for the four-year runway into Super Bowl LXIV. We close the distance between brands entering Nashville and the culture they're trying to reach.</p>
       <div class="hero-cta-row">
@@ -1021,7 +1002,6 @@
   </div>
 </section>
 
-<!-- RUNWAY -->
 <section class="runway">
   <div class="runway-header">
     <div>
@@ -1058,7 +1038,6 @@
   </div>
 </section>
 
-<!-- WHO IT'S FOR -->
 <section class="who" id="who">
   <div class="section-eyebrow">/ Who This Is Built For</div>
   <h2 class="section-headline">Three buyers. <em>One cultural translation problem.</em></h2>
@@ -1084,7 +1063,6 @@
   </div>
 </section>
 
-<!-- OFFERS -->
 <section class="offer" id="work">
   <div class="section-eyebrow">/ The Offers / Three Doors In</div>
   <h2 class="section-headline">Built to match where you are <em>on the runway.</em></h2>
@@ -1125,7 +1103,6 @@
   </div>
 </section>
 
-<!-- CAPABILITIES -->
 <section class="caps" id="capabilities">
   <div class="caps-grid">
     <div class="caps-left">
@@ -1146,7 +1123,6 @@
   </div>
 </section>
 
-<!-- APPROACH -->
 <section class="partner" id="approach">
   <div>
     <div class="partner-meta">/ How We Work</div>
@@ -1158,7 +1134,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="cta-eyebrow">/ Start the Conversation</div>
   <h2 class="cta-headline">The runway is <em>open.</em></h2>
@@ -1166,7 +1141,6 @@
   <a href="https://calendly.com/fayevaughn/consultation" target="_blank" rel="noopener" class="cta-button">Book a Discovery Call <span class="arrow">&rarr;</span></a>
 </section>
 
-<!-- SITE CHROME: FOOTER (matches live site) -->
 <footer class="site-footer">
   <div class="site-footer-cta">Ready to <em>close the distance?</em></div>
   <p class="site-footer-sub">Book a discovery call and let's talk about where your brand is, where it should be, and how to get there.</p>
